@@ -1,6 +1,32 @@
+let catX = 100;
+let catY = 200;
+let ratX = 300;
+let ratY = 200;
+let stepSize = 1; // Adjust the step size as needed for the cat's movement speed
+let catClicked = false;
+
 function setup() {
   createCanvas(400, 400);
 }
+
+function draw() {
+  // Draw background
+  drawBackground();
+
+  // Draw cat
+  drawCat(catX, catY);
+
+  // Draw rat
+  drawRat(ratX, ratY);
+
+  // Move cat if clicked
+  if (catClicked && catX < ratX) {
+    catX += stepSize;
+  }
+
+  // Check if the cat has reached the rat
+  if (catX >= ratX && catY === ratY) {
+  } 
 
 function drawBackground() {
   // Yellow wall
@@ -70,4 +96,11 @@ function drawRat(x, y) {
   line(x + ratSize * 0.4, y, x + ratSize * 0.6, y - ratSize * 0.1); // Whisker 1
   line(x + ratSize * 0.4, y, x + ratSize * 0.6, y); // Whisker 2
   line(x + ratSize * 0.4, y, x + ratSize * 0.6, y + ratSize * 0.1); // Whisker 3
+}
+
+function mouseClicked() {
+  // Check if the mouse click is within the cat's bounding box
+  if (mouseX > catX - 40 && mouseX < catX + 80 && mouseY > catY - 60 && mouseY < catY) {
+    catClicked = true;
+  }
 }

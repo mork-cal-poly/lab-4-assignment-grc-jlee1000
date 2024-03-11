@@ -38,3 +38,24 @@ function drawCat(x, y) {
   rect(x - 30, y + 10, 15, 30);
   rect(x + 15, y + 10, 15, 30);
 }
+
+function drawRat(x, y) {
+  // Rat body
+  fill(128); // Gray color
+  ellipse(x, y, ratSize, ratSize);
+
+  // Rat ears
+  fill(128); // Gray color
+  ellipse(x + ratSize * 0.25, y - ratSize * 0.25, ratSize * 0.5, ratSize * 0.5); // Right ear
+  ellipse(x - ratSize * 0.25, y - ratSize * 0.25, ratSize * 0.5, ratSize * 0.5); // Left ear
+
+  // Rat snout
+  fill(255, 192, 203); // Pink color
+  ellipse(x + ratSize * 0.4, y - ratSize * 0.1, ratSize * 0.3, ratSize * 0.2); // Snout
+
+  // Rat whiskers
+  stroke(0); // Black color
+  line(x + ratSize * 0.4, y, x + ratSize * 0.6, y - ratSize * 0.1); // Whisker 1
+  line(x + ratSize * 0.4, y, x + ratSize * 0.6, y); // Whisker 2
+  line(x + ratSize * 0.4, y, x + ratSize * 0.6, y + ratSize * 0.1); // Whisker 3
+}

@@ -1,6 +1,18 @@
 function setup() {
   createCanvas(400, 400);
 }
+
+function drawBackground() {
+  // Yellow wall
+  fill(229, 209, 132); // Yellow color
+  rect(0, 0, width, height * 2.0); // Wall occupies 80% of the canvas height
+
+  // Brown floor
+  fill(139, 69, 19); // Brown color
+  let floorY = ratY + 20; // Adjusted position of the floor
+  rect(0, floorY, width, height - floorY); // Floor positioned slightly below the rat
+}
+
 function drawCat(x, y) {
   // Cat body
   fill(255, 165, 0); // Orange color

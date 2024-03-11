@@ -4,6 +4,7 @@ let ratX = 300;
 let ratY = 200;
 let stepSize = 1; // Adjust the step size as needed for the cat's movement speed
 let catClicked = false;
+let ratSize = 20; // Initial size of the rat
 
 function setup() {
   createCanvas(400, 400);
@@ -26,7 +27,9 @@ function draw() {
 
   // Check if the cat has reached the rat
   if (catX >= ratX && catY === ratY) {
-  } 
+    ratSize *= 2; // Double the rat's size
+  }
+}
 
 function drawBackground() {
   // Yellow wall
@@ -104,3 +107,4 @@ function mouseClicked() {
     catClicked = true;
   }
 }
+
